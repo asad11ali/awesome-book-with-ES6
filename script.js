@@ -1,5 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
+/* eslint-disable no-undef */
+const d = new Date();
+const text = d.toDateString();
+const date = document.getElementById('date');
+date.innerText = text;
 const addBtn = document.getElementById('add');
 const bookField = document.getElementById('bookField');
 const authorField = document.getElementById('authorField');
@@ -13,7 +18,7 @@ if (bookobj !== null && authorobj !== null) {
   bookArray = JSON.parse(bookobj);
   authorArray = JSON.parse(authorobj);
 }
-function displayinfo() {
+displayinfo = () => {
   let statement = '';
 
   authorArray.forEach((author, index) => {
@@ -31,27 +36,27 @@ function displayinfo() {
   });
 
   records.innerHTML = statement;
-}
+};
 displayinfo();
-function saveinfo(bookArray, authorArray) {
+saveinfo = (bookArray, authorArray) => {
   const strName = JSON.stringify(bookArray);
   const strAuthor = JSON.stringify(authorArray);
   localStorage.setItem('books', strName);
   localStorage.setItem('author', strAuthor);
-}
+};
 
-function deleteinfo(index) {
+deleteinfo = (index) => {
   bookArray.splice(index, 1);
   authorArray.splice(index, 1);
   saveinfo(bookArray, authorArray);
   displayinfo();
-}
-function editinfo(index) {
+};
+editinfo = (index) => {
   edit_info = index;
   bookField.value = bookArray[index];
   authorField.value = authorArray[index];
   addBtn.innerText = 'Edit';
-}
+};
 addBtn.onclick = () => {
   const name = bookField.value;
   const author = authorField.value;
