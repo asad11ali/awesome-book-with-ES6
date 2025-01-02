@@ -1,10 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
-/* eslint-disable no-undef */
-const d = new Date();
-const text = d.toDateString();
-const date = document.getElementById('date');
-date.innerText = text;
+/* eslint-disable no-undef */ 
+import { DateTime } from './node_modules/luxon/build/es6/luxon.js';
+
+const now = DateTime.now();
+const formattedDate = now.toLocaleString(DateTime.DATE_FULL);
+
+const dateContainer = document.getElementById('date');
+dateContainer.textContent = formattedDate;
+
 const addBtn = document.getElementById('add');
 const bookField = document.getElementById('bookField');
 const authorField = document.getElementById('authorField');
