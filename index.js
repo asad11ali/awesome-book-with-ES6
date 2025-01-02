@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
-/* eslint-disable no-undef */ 
+/* eslint-disable no-undef */
 import { DateTime } from './node_modules/luxon/build/es6/luxon.js';
 
 const now = DateTime.now();
