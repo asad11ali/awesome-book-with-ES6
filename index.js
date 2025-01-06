@@ -4,10 +4,10 @@
 import { DateTime } from './node_modules/luxon/build/es6/luxon.js';
 
 const now = DateTime.now();
-const formattedDate = now.toLocaleString(DateTime.DATE_FULL);
+const formattedDateTime = now.toLocaleString(DateTime.DATETIME_HUGE);
 
 const dateContainer = document.getElementById('date');
-dateContainer.textContent = formattedDate;
+dateContainer.textContent = formattedDateTime;
 
 const addBtn = document.getElementById('add');
 const bookField = document.getElementById('bookField');

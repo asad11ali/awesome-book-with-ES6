@@ -195,3 +195,7 @@ td {
   color: #fff;
   letter-spacing: 1px;
 }
+
+#date {
+  width: 200px;
+}
